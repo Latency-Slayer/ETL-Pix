@@ -42,22 +42,6 @@ public class Pix {
     @JsonProperty("QUANTIDADE")
     private Integer QUANTIDADE;
 
-    public Pix(){}
-    public Pix(Integer ano, String PAG_PFPJ, String REC_PFPJ, String PAG_REGIAO, String REC_REGIAO, String PAG_IDADE, String REC_IDADE, String FORMA_INICIACAO, String NATUREZA, String FINALIDADE, Double VALOR, Integer QUANTIDADE) {
-        this.anoMes = ano;
-        this.PAG_PFPJ = PAG_PFPJ;
-        this.REC_PFPJ = REC_PFPJ;
-        this.PAG_REGIAO = PAG_REGIAO;
-        this.REC_REGIAO = REC_REGIAO;
-        this.PAG_IDADE = PAG_IDADE;
-        this.REC_IDADE = REC_IDADE;
-        this.FORMA_INICIACAO = FORMA_INICIACAO;
-        this.NATUREZA = NATUREZA;
-        this.FINALIDADE = FINALIDADE;
-        this.VALOR = VALOR;
-        this.QUANTIDADE = QUANTIDADE;
-    }
-
     public Integer getAno() {
         return anoMes;
     }

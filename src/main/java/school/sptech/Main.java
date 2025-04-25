@@ -7,7 +7,6 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class Main implements RequestHandler<S3Event, String>{
@@ -28,11 +27,11 @@ public class Main implements RequestHandler<S3Event, String>{
                 // Leitura do arquivo JSON do bucket de origem
                 InputStream s3InputStream = s3Client.getObject(sourceBucket, sourceKey).getObjectContent();
 
-                // Conversão do JSON para uma lista de objetos Stock usando o Mapper
+                // Conversão do JSON para uma lista de objetos Pix usando o Mapper
                 PixMapper mapper = new PixMapper();
                 List<Pix> p = mapper.mapearPix(s3InputStream);
 
-                // Geração do arquivo CSV a partir da lista de Stock usando o CsvWriter
+                // Geração do arquivo CSV a partir da lista de Pix usando o CsvWriter
                 CsvWriter csvWriter = new CsvWriter();
                 ByteArrayOutputStream csvOutputStream = csvWriter.writeCsv(p);
 

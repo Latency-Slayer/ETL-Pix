@@ -10,9 +10,7 @@ import java.util.List;
 public class PixMapper {
     public List<Pix> mapearPix(InputStream input) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        List<Pix> pixJson = objectMapper.readValue(input,
-                new TypeReference<List<Pix>>() {});
-
-        return pixJson;
+        return objectMapper.readValue(input, new TypeReference<List<Pix>>() {
+        });
     }
 }

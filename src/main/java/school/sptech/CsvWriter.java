@@ -15,16 +15,18 @@ public class CsvWriter {
         // Criar um CSV em memória utilizando ByteArrayOutputStream
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8));
-        CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader("AnoMes", "PAG_PFPJ", "REC_PFPJ", "PAG_REGIÃO", "REC_REGIÃO", "PAG_IDADE", "REC_IDADE", "FORMA_INICIAÇÃO", "NATUREZA", "FINALIDADE", "VALOR", "QUANTIDADE"));
+        CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader("AnoMes", "PAG_PFPJ", "REC_PFPJ", "PAG_REGIAO", "REC_REGIAO", "PAG_IDADE", "REC_IDADE", "FORMAINICIACAO", "NATUREZA", "FINALIDADE", "VALOR", "QUANTIDADE"));
 
         // Processar e escrever cada objeto no CSV
         for (Pix p : pix) {
             csvPrinter.printRecord(
-                    p.anoMes(),
+                    p.getAno(),
                     p.getPAG_PFPJ(),
                     p.getREC_PFPJ(),
                     p.getPAG_REGIAO(),
                     p.getREC_REGIAO(),
+                    p.getPAG_IDADE(),
+                    p.getREC_IDADE(),
                     p.getFORMA_INICIACAO(),
                     p.getNATUREZA(),
                     p.getFINALIDADE(),
