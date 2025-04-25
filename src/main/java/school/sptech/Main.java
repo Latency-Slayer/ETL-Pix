@@ -9,19 +9,19 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import java.io.*;
 import java.util.List;
 
-public class Main implements RequestHandler<S3Event, String>{
+public class Main implements RequestHandler<S3Event, String> {
         // Criação do cliente S3 para acessar os buckets
         private final AmazonS3 s3Client = AmazonS3ClientBuilder.defaultClient();
 
         // Bucket de destino para o CSV gerado
-        private static final String DESTINATION_BUCKET = "trusted-components";
+        private static final String DESTINATION_BUCKET = "latency-slayer-bucket-s3-trusted";
 
         @Override
         public String handleRequest (S3Event s3Event, Context context){
 
             // Extraímos o nome do bucket de origem e a chave do arquivo JSON
-            String sourceBucket = s3Event.getRecords().get(0).getS3().getBucket().getName();
-            String sourceKey = s3Event.getRecords().get(0).getS3().getObject().getKey();
+            String sourceBucket = s3Event.getRecords().getFirst().getS3().getBucket().getName();
+            String sourceKey = s3Event.getRecords().getFirst().getS3().getObject().getKey();
 
             try {
                 // Leitura do arquivo JSON do bucket de origem
