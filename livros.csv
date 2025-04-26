@@ -1,2 +1,5 @@
-anoMes;pag_pfpj;rec_pfpj;pag_regiao;rec_regiao;pag_idade;rec_idade;forma;natureza;finalidade;valor;quantidade;
-202302;PF;PF;CENTRO-OESTE;NORDESTE;entre 30 e 39 anos;entre 30 e 39 anos;QRES;P2P;Pix;1148814,13;27622;
+anoMes;pag_pfpj;rec_pfpj;pag_regiao;rec_regiao;pag_idade;rec_idade;finalidade;valor;quantidade;
+2023/02;Fisica;Fisica;CENTRO-OESTE;NORDESTE;entre 30 e 39 anos;entre 30 e 39 anos;Pix;1148814,13;27622;
+2025/07;Juridica;Fisica;CENTRO-OESTE;NORDESTE;entre 40 e 49 anos;entre 50 e 59 anos;Pix;1148814,13;27622;
+2021/09;Juridica;Fisica;CENTRO-OESTE;NORDESTE;entre 10 e 39 anos;entre 20 e 79 anos;Pix;1148814,13;27622;
+2023/02;Fisica;Fisica;CENTRO-OESTE;NORDESTE;entre 50 e 59 anos;entre 80 e 99 anos;Pix;1148814,13;27622;

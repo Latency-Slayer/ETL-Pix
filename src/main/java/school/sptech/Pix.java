@@ -53,16 +53,6 @@ public class Pix {
         return tipo;
     }
 
-    public static String formatarColunaIdade(String idade){
-            if (idade != null && idade.contains("entre")) {
-                String[] partes = idade.replace("anos", "").replace("entre", "").trim().split(" e ");
-                if (partes.length == 2) {
-                    return partes[0].trim() + "_" + partes[1].trim();
-                }
-            }
-            return idade;
-    }
-
 
     public String getPAG_PFPJ() {
         return PAG_PFPJ;

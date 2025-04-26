@@ -49,9 +49,9 @@ public class Teste {
 
         //Escrever e fechar o arquivo
         try {
-            saida.append("anoMes;pag_pfpj;rec_pfpj;pag_regiao;rec_regiao;pag_idade;rec_idade;forma;natureza;finalidade;valor;quantidade;\n");
+            saida.append("anoMes;pag_pfpj;rec_pfpj;pag_regiao;rec_regiao;pag_idade;rec_idade;finalidade;valor;quantidade;\n");
             for (Pix p : listaPix){
-//                saida.write(String.format("%d;%s;%s;%s;%s;%s;%s;%s;%s;%s;%.2f;%d;\n",p.getAno(),p.getPAG_PFPJ(),p.getREC_PFPJ(),p.getPAG_REGIAO(), p.getREC_REGIAO(),p.getPAG_IDADE(),p.getREC_IDADE(),p.getFORMA_INICIACAO(),p.getNATUREZA(),p.getFINALIDADE(),p.getVALOR(),p.getQUANTIDADE()));
+                saida.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%.2f;%d;\n",p.anoMes(),Pix.formatarTipoPessoa(p.getPAG_PFPJ()),Pix.formatarTipoPessoa(p.getREC_PFPJ()),p.getPAG_REGIAO(), p.getREC_REGIAO(),p.getPAG_IDADE(),p.getREC_IDADE(),p.getFINALIDADE(),p.getVALOR(),p.getQUANTIDADE()));
             }
         } catch (IOException e) {
             System.out.println("Erro ao gravar um arquivo");
