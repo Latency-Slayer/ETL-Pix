@@ -24,6 +24,9 @@ public class CsvWriter {
 
         // Processar e escrever cada objeto no CSV
         for (Pix p : pix) {
+            if (p.getFINALIDADE().equals("Nao disponivel")){
+                continue;
+            }
             csvPrinter.printRecord(
                     p.anoMes(),
                     Pix.formatarTipoPessoa(p.getPAG_PFPJ()),
@@ -44,5 +47,9 @@ public class CsvWriter {
 
         // Retornar o ByteArrayOutputStream que contém o CSV gerado
         return outputStream;
+    }
+
+    public static boolean removeRow(Pix p){
+        return p.getFINALIDADE().equals("Nao disponivel");
     }
 }
