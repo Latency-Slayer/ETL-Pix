@@ -48,8 +48,4 @@ public class CsvWriter {
         // Retornar o ByteArrayOutputStream que contém o CSV gerado
         return outputStream;
     }
-
-    public static boolean removeRow(Pix p){
-        return p.getFINALIDADE().equals("Nao disponivel");
-    }
 }
