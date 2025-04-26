@@ -27,12 +27,6 @@ public class Pix {
     @JsonProperty("REC_IDADE")
     private String REC_IDADE;
 
-    @JsonProperty("FORMAINICIACAO")
-    private String FORMA_INICIACAO;
-
-    @JsonProperty("NATUREZA")
-    private String NATUREZA;
-
     @JsonProperty("FINALIDADE")
     private String FINALIDADE;
 
@@ -47,12 +41,28 @@ public class Pix {
     }
 
     public String anoMes(){
-        String anoMesString = String.valueOf(anoMes);
-        String ano = anoMesString.substring(0,4);
-        String mes = anoMesString.substring(4,6);
-
-        return ano + "-" + mes;
+        String str = String.format("%06d", anoMes);
+        return str.substring(0, 4) + "/" + str.substring(4);
     }
+    public static String formatarTipoPessoa(String tipo) {
+        if ("PF".equalsIgnoreCase(tipo)) {
+            return "Fisica";
+        } else if ("PJ".equalsIgnoreCase(tipo)) {
+            return "Juridica";
+        }
+        return tipo;
+    }
+
+    public static String formatarColunaIdade(String idade){
+            if (idade != null && idade.contains("entre")) {
+                String[] partes = idade.replace("anos", "").replace("entre", "").trim().split(" e ");
+                if (partes.length == 2) {
+                    return partes[0].trim() + "_" + partes[1].trim();
+                }
+            }
+            return idade;
+    }
+
 
     public String getPAG_PFPJ() {
         return PAG_PFPJ;
@@ -78,14 +88,6 @@ public class Pix {
         return REC_IDADE;
     }
 
-    public String getFORMA_INICIACAO() {
-        return FORMA_INICIACAO;
-    }
-
-    public String getNATUREZA() {
-        return NATUREZA;
-    }
-
     public String getFINALIDADE() {
         return FINALIDADE;
     }
@@ -108,8 +110,6 @@ public class Pix {
                 ", REC_REGIAO='" + REC_REGIAO + '\'' +
                 ", PAG_IDADE='" + PAG_IDADE + '\'' +
                 ", REC_IDADE='" + REC_IDADE + '\'' +
-                ", FORMA_INICIACAO='" + FORMA_INICIACAO + '\'' +
-                ", NATUREZA='" + NATUREZA + '\'' +
                 ", FINALIDADE='" + FINALIDADE + '\'' +
                 ", VALOR=" + VALOR +
                 ", QUANTIDADE=" + QUANTIDADE +
